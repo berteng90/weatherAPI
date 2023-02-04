@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz@8..144&display=swap");
+
 html,
 body {
   width: 100vw;
   height: 100vh;
-  background-color: #d1d5db;
+  background-color: #60a5fa;
+  font-family: "Roboto Serif", serif;
 }
 
 *,
@@ -19,20 +22,36 @@ nav {
   justify-content: center;
 }
 
+input[type="text"] {
+  height: 2.5rem;
+  font-size: 1.5em;
+}
 nav > * {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  background-color: #e7e5e4;
+  background-color: #f8fafc;
 }
 
 .search-container {
   display: flex;
   flex-flow: column;
-  width: clamp(250px, 50vw, 450px);
+  width: clamp(350px, 50vw, 450px);
 }
 
 li {
   list-style: none;
+  font-size: 1.2rem;
+}
+
+li:hover {
+  cursor: pointer;
+  color: #60a5fa;
+}
+
+.weather-wrapper {
+  display: flex;
+  height: 90vh;
+  width: 100vw;
 }
