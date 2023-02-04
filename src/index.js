@@ -1,6 +1,2 @@
-const fetchWeatherdata = async () => {
-  const res = await fetch("", {
-    mode: "cors",
-    method: "GET",
-  });
-};
+import "./style.css";
+import "./main.js";
