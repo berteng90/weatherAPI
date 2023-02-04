@@ -51,7 +51,13 @@ const fetchWeatherData = async (lat, lon) => {
     }
   )
     .then((data) => data.json())
-    .then((weatherData) => console.log(weatherData));
+    .then((weatherData) => populateData(weatherData));
+};
+
+const populateData = (weatherData) => {
+  console.log(weatherData);
+  const weatherInfo = document.querySelector(".weather-info").children;
+  for (i = 0; i < weatherInfo.length; i++) {}
 };
 
 // OPEN WEATHER GEOLOCATION API
