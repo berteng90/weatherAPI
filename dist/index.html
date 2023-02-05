@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <nav class="header nav">
+      <div class="header search-wrapper">
+        <div class="search-container">
+          <input
+            type="text"
+            class="header searchbar"
+            placeholder="Type to search..."
+            name="search"
+          />
+          <div id="searchbar-suggesstions">
+            <ul id="searchbar-results"></ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="weather-wrapper">
+      <section class="weather-info">
+        <label id="temperature"></label>
+        <label id="clouds"></label>
+        <label id="feels-like"></label>
+        <label id="humidity"></label>
+        <label id="wind"></label>
+      </section>
+      <section class="weather-address">
+        <label id="address"></label>
+        <label id="countr"></label>
+        <label id="time"></label>
+        <label id="latitude"></label>
+        <label id="longitute"></label>
+      </section>
+    </div>
+  </body>
+</html>
