@@ -63,20 +63,6 @@ const populateData = (weatherData) => {
   weatherInfo[3].textContent = weatherData.main.humidity;
   weatherInfo[4].textContent = weatherData.wind.speed;
 
-  const weatherAddress = document.querySelector(".weather-address");
-  const localTime = new Date().getTime();
-  const localOffset = new Date().getTimezoneOffset() * 60000;
-  const currentUtcTime = localOffset + localTime;
-  const cityOffset = currentUtcTime + 1000 * weatherData.timezone;
-  const cityTime = new Date(cityOffset).toTimeString().split(" ");
-  console.log(cityTime);
-
-  // const timezoneOffset = weatherData.timezone;
-  // console.log(timezoneOffset);
-  // let date = new Date();
-  // date = new Date(timezoneOffset * 60 * 1000);
-  // console.log(date);
-
   // weatherAddress[0] = weatherData.main;
   // weatherAddress[1] =
   //   weatherAddress[2] =
