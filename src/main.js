@@ -30,7 +30,6 @@ const fetchWeatherDataLocation = async (location) => {
         };
         li.textContent = `${locList.name}, ${locList.state} (${locList.country})`;
         ul.appendChild(li);
-        console.log(weatherData[i]);
         li.addEventListener("click", () => {
           const searchbar = document.querySelector(".searchbar");
           ul.innerHTML = "";
@@ -42,7 +41,6 @@ const fetchWeatherDataLocation = async (location) => {
 };
 
 const fetchWeatherData = async (lat, lon) => {
-  console.log(lat, lon);
   const response = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=87eefaf1dae2bd0cc45a46101dfe1f24`,
     {
@@ -57,7 +55,35 @@ const fetchWeatherData = async (lat, lon) => {
 const populateData = (weatherData) => {
   console.log(weatherData);
   const weatherInfo = document.querySelector(".weather-info").children;
-  for (i = 0; i < weatherInfo.length; i++) {}
+  weatherInfo[0].textContent = parseFloat(
+    (weatherData.main.temp - 273.15).toFixed(2)
+  );
+  weatherInfo[1].textContent = weatherData.weather[0].description;
+  weatherInfo[2].textContent = weatherData.main.feels_like;
+  weatherInfo[3].textContent = weatherData.main.humidity;
+  weatherInfo[4].textContent = weatherData.wind.speed;
+
+  const weatherAddress = document.querySelector(".weather-address");
+  const localTime = new Date().getTime();
+  const localOffset = new Date().getTimezoneOffset() * 60000;
+  const currentUtcTime = localOffset + localTime;
+  const cityOffset = currentUtcTime + 1000 * weatherData.timezone;
+  const cityTime = new Date(cityOffset).toTimeString().split(" ");
+  console.log(cityTime);
+
+  // const timezoneOffset = weatherData.timezone;
+  // console.log(timezoneOffset);
+  // let date = new Date();
+  // date = new Date(timezoneOffset * 60 * 1000);
+  // console.log(date);
+
+  // weatherAddress[0] = weatherData.main;
+  // weatherAddress[1] =
+  //   weatherAddress[2] =
+  //   weatherData.weatherAddress[3] =
+  //   weatherAddress[4] =
+  //     console.log(weatherData.main.temp);
+  // console.log(weatherAddress);
 };
 
 // OPEN WEATHER GEOLOCATION API

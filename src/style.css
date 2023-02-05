@@ -59,3 +59,9 @@ li:hover {
 section {
   display: flex;
 }
+
+.weather-info,
+.weather-address {
+  display: flex;
+  flex-flow: column wrap;
+}
